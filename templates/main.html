@@ -1,0 +1,22 @@
+{{ block "home" . }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Hello</title>
+    <script src="/public/js/htmx.min.js"></script>
+</head>
+    <body>
+        <button hx-post="/increment" hx-target="#count" hx-swap="innerHtml">Click Me</button>
+        <div id="count">
+            0
+        </div>
+    </body>
+</html>
+
+{{ end }}
+
+{{ block "count" . }}
+    {{ .Value }}
+{{ end }}
